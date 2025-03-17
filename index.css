@@ -1,0 +1,34 @@
+.cases-quote {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url(./assest/g-pic.png);
+  background-color: #000000;
+  opacity: 1;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100vw;
+  color: #fff;
+  font-family: "poppins";
+  font-size: 60px;
+  line-height: 64px;
+}
+
+.fx-parent {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 908px;
+  gap: 10px;
+}
+
+.fx-word {
+  display: flex;
+  flex-direction: row;
+  gap: 0px;
+}
