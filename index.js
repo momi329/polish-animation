@@ -1,68 +1,28 @@
 gsap.registerPlugin(Flip);
 
+const startButton = document.getElementById("start");
+
 const words = document.querySelectorAll(".fx-word");
-const quotes = document.querySelectorAll(
-  ".fx-letter.start-quote, .fx-letter.end-quote"
-);
 
 const tl = gsap.timeline();
 
-words.forEach((word) => {
-  const letters = word.querySelectorAll(".fx-letter");
-  gsap.set(letters, {
-    y: window.innerHeight,
-    opacity: 0,
-  });
-});
-
-gsap.set(quotes, {
-  y: window.innerHeight,
+tl.to(".loader", {
   opacity: 0,
-});
-
-words.forEach((word, wordIndex) => {
-  const letters = word.querySelectorAll(".fx-letter");
-
-  letters.forEach((letter, letterIndex) => {
-    tl.to(
-      letter,
-      {
-        y: 0,
-        opacity: 1,
-        duration: 0.8,
-        ease: "power2.out",
-      },
-      `${wordIndex * 0.1 + letterIndex * 0.01}`
-    );
+  duration: 1,
+  ease: "circ.out",
+})
+  .to(".transition-div", {
+    opacity: 0.8,
+    position: "absolute",
+    top: 0,
+    left: "-100%",
+    duration: 1,
+    ease: "expoScale",
+  })
+  .to(".fx-letter", {
+    transform: "none",
+    opacity: 1,
+    duration: 0.8,
+    ease: "circ.out",
+    stagger: 0.05,
   });
-});
-
-quotes.forEach((quote, index) => {
-  if (index === 0) {
-    tl.to(
-      quote,
-      {
-        y: 0,
-        opacity: 1,
-        duration: 0.8,
-        ease: "power2.out",
-      },
-      0
-    );
-  } else {
-    tl.to(
-      quote,
-      {
-        y: 0,
-        opacity: 1,
-        duration: 0.8,
-        ease: "power2.out",
-      },
-      ">-0.5"
-    );
-  }
-});
-
-tl.eventCallback("onComplete", () => {
-  console.log("Animation completed!");
-});
