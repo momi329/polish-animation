@@ -23,7 +23,7 @@ A practice project exploring GSAP animations, featuring loading and text effects
 ## Learning Focus
 
 - GSAP Timeline implementation
-- Text animation techniques
+- Text animation techniquess
 - Loading animation design
 - CSS class-based animations
 
@@ -35,4 +35,5 @@ A practice project exploring GSAP animations, featuring loading and text effects
 
 ## Preview
 
-![Demo Video](./assets/demo.mp4)
+[Demo Page](https://momi329.github.io/polish-animation/)
+![Demo Video](./assets/demo.gif)
