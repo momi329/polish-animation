@@ -2,6 +2,12 @@
 
 A practice project exploring GSAP animations, featuring loading and text effects.
 
+## Preview
+
+[🔗 Demo Page](https://momi329.github.io/polish-animation/)
+
+![Demo Video](./assets/demo.gif)
+
 ## Design
 
 - Inspired by [Dogstudio's Cases page](https://dogstudio.co/cases/)
@@ -33,8 +39,4 @@ A practice project exploring GSAP animations, featuring loading and text effects
 2. Open with Live Server or directly open index.html
 3. Watch the animations in action
 
-## Preview
 
-[🔗 Demo Page](https://momi329.github.io/polish-animation/)
-
-![Demo Video](./assets/demo.gif)
