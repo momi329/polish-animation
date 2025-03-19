@@ -58,6 +58,7 @@ table {
 }
 
 html, body {
+    position: relative;
     height: 100%;
     width: 100%;
     margin: 0;
@@ -92,13 +93,9 @@ html, body {
   font-size: 60px;
   line-height: 64px;
 }
-
 .fx-parent {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
   max-width: 908px;
   gap: 10px;
 }
@@ -109,6 +106,8 @@ html, body {
   gap:0px;
 }
 
+
+
 .fx-letter {
   transform: translate3d(80px, 50px, -300px) scaleY(0.01) rotateX(-90deg) rotate(-35deg);
   transform-origin: 0 100%;
@@ -118,28 +117,46 @@ html, body {
 
 
 
-/* HTML: <div class="loader"></div> */
 .loader {
-    opacity: 1;
-    height: 100px;
-    aspect-ratio: 1;
-    padding: 4px;
+    z-index: 110;
+    width: 160px;
+    height: 160px;
+    border:2px solid rgb(48, 48, 48);
     border-radius: 50%;
-    box-sizing: border-box;
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    mask: conic-gradient(#000 0 0) content-box exclude,conic-gradient(#000 0 0);
-    filter: blur(12px);
+    top:calc(50% - 80px);
+    left:calc(50% - 80px);
+    transform:rotate(45deg);
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;    
   }
-  .loader:before {
+  .loader::before {
+    width: 100%;
+    height: 100%;
     content: "";
     position: absolute;
-    inset: 0;
-    background: repeating-conic-gradient(#0000 0 5%,#C02942,#0000 20% 50%);
-    animation: l2 1.5s linear infinite;
+    box-sizing: border-box;
+    border-radius: 50%;
+    border: 2px solid rgb(48, 48, 48);
+    animation: prixClipFix 1s linear 1.2s forwards;
   }
-  @keyframes l2 {
-    to {rotate: 1turn}
+.loader img{
+    padding-bottom: 3px;
+    padding-left: 12px;
+    margin:auto;
+    display: block;
+    width: 60%;
+    rotate: -45deg;
+    object-fit: cover;
+}
+  @keyframes prixClipFix {
+      0%   {clip-path:polygon(50% 50%,0 0,0 0,0 0,0 0,0 0); transform: rotate(0deg); border: 2px solid rgb(48, 48, 48)}
+      25%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 0,100% 0,100% 0);border: 2px solid #FF3D00; }
+      50%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,100% 100%,100% 100%)}
+      75%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 100%)}
+      85% {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 0)}
+      100% {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 0);border: 2px solid #FF3D00;}
   }
+    

@@ -7,8 +7,9 @@ const words = document.querySelectorAll(".fx-word");
 const tl = gsap.timeline();
 
 tl.to(".loader", {
-  opacity: 0,
-  duration: 1,
+  display: "none",
+  delay: 1.2,
+  duration: 1.2,
   ease: "circ.out",
 })
   .to(".transition-div", {
@@ -22,7 +23,7 @@ tl.to(".loader", {
   .to(".fx-letter", {
     transform: "none",
     opacity: 1,
-    duration: 0.8,
+    duration: 0.5,
     ease: "circ.out",
     stagger: 0.05,
   });
