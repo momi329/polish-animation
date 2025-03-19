@@ -17,7 +17,7 @@ tl.to(".loader", {
     position: "absolute",
     top: 0,
     left: "-100%",
-    duration: 1,
+    duration: 0.5,
     ease: "expoScale",
   })
   .to(".fx-letter", {
@@ -25,5 +25,5 @@ tl.to(".loader", {
     opacity: 1,
     duration: 0.5,
     ease: "circ.out",
-    stagger: 0.05,
+    stagger: 0.025,
   });
