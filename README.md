@@ -35,5 +35,6 @@ A practice project exploring GSAP animations, featuring loading and text effects
 
 ## Preview
 
-[Demo Page](https://momi329.github.io/polish-animation/)
+[🔗 Demo Page](https://momi329.github.io/polish-animation/)
+
 ![Demo Video](./assets/demo.gif)
